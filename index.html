@@ -5,6 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive web pages</title>
+    <script>
+        // Disable right-click on the whole document
+        document.addEventListener("contextmenu", function(event) {
+            event.preventDefault(); // Prevent context menu from appearing
+        });
+    </script>
+    <script>
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+                event.preventDefault();  // Block opening DevTools
+                alert('Developer tools are disabled.');
+            }
+        });
+    </script>
     <style>
         .red {
             color: red;
